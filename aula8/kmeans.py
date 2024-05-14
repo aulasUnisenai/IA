@@ -175,7 +175,7 @@ numeric_transformer = Pipeline(steps=[
     ('scaler', StandardScaler())
 ])
 
-# Transformador para colunas numéricas
+# Transformador para colunas categóricas
 categorical_transformer = Pipeline(steps=[
     ('onehot', OneHotEncoder())
 ])
