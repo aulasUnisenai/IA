@@ -263,27 +263,27 @@ fig.show()
 
 """# Avaliação (Melhor Modelo)"""
 
-rf = RandomForestClassifier(random_state=42)
-rf.fit(X_train_processed, y_train)
+modelo = RandomForestClassifier(random_state=42) # Nesse exemplo, o RF foi o melhor
+modelo.fit(X_train_processed, y_train)
 
 # Acurácia
-rf_acc = accuracy_score(y_test,
+modelo_acc = accuracy_score(y_test,
                         rf.predict(X_test_processed))
 
 print(f"Acurácia (treino):"
       f"{accuracy_score(y_train,
-                        rf.predict(X_train_processed))}")
+                        modelo.predict(X_train_processed))}")
 
-print(f"Acurácia (teste): {rf_acc:.2f}")
+print(f"Acurácia (teste): {modelo_acc:.2f}")
 
 # Matriz de confusão
-rf_matriz = confusion_matrix(y_test,
-                             rf.predict(X_test_processed))
+modelo_matriz = confusion_matrix(y_test,
+                             modelo.predict(X_test_processed))
 
 # Mostrar matriz
-plot_confusion_matrix(rf_matriz, labels)
+plot_confusion_matrix(modelo_matriz, labels)
 
 # Relatório de classificação
 print(classification_report(y_test,
-                            rf.predict(X_test_processed),
+                            modelo.predict(X_test_processed),
                             target_names=labels))
