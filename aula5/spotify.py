@@ -28,7 +28,6 @@ from sklearn.metrics import (
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import SVC
-from sklearn.naive_bayes import GaussianNB
 from sklearn.linear_model import LogisticRegression
 # Ignorar alertas
 import warnings
