@@ -267,23 +267,18 @@ modelo = RandomForestClassifier(random_state=42) # Nesse exemplo, o RF foi o mel
 modelo.fit(X_train_processed, y_train)
 
 # Acurácia
-modelo_acc = accuracy_score(y_test,
-                        rf.predict(X_test_processed))
+modelo_acc = accuracy_score(y_test, modelo.predict(X_test_processed))
 
 print(f"Acurácia (treino):"
-      f"{accuracy_score(y_train,
-                        modelo.predict(X_train_processed))}")
+      f"{accuracy_score(y_train, modelo.predict(X_train_processed))}")
 
 print(f"Acurácia (teste): {modelo_acc:.2f}")
 
 # Matriz de confusão
-modelo_matriz = confusion_matrix(y_test,
-                             modelo.predict(X_test_processed))
+modelo_matriz = confusion_matrix(y_test, modelo.predict(X_test_processed))
 
 # Mostrar matriz
 plot_confusion_matrix(modelo_matriz, labels)
 
 # Relatório de classificação
-print(classification_report(y_test,
-                            modelo.predict(X_test_processed),
-                            target_names=labels))
+print(classification_report(y_test, modelo.predict(X_test_processed), target_names=labels))
